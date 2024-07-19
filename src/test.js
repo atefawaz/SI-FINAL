@@ -1,8 +1,10 @@
-const test =   {
-    key: 'value',  anotherKey: 'anotherValue'
+const example =    { 
+    key1: "value1",  key2: "value2"
   };
   
-  function exampleFunction(){
-    console.log("Hello, world!")
+  function testFunction(){
+  console.log('Testing ESLint, Prettier, and Husky setup')
   }
+  
+  testFunction()
   
