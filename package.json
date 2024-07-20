@@ -37,29 +37,17 @@
     "typescript-eslint": "^7.16.1"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{js,json,css,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "src/**/*.{js,html.css}": "prettier --write",
-    "src/**/*.js": "eslint"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
+  "*.{js,jsx,ts,tsx,json,css,md}": [
+    "prettier --write",
+    "eslint --fix"
+  ]
+}
+,
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
+}
+
 }
