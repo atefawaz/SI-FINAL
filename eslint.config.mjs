@@ -1,12 +1,48 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-
 
 export default [
-  {files: ["**/*.{js,mjs,cjs,ts}"]},
-  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
-  {languageOptions: { globals: globals.browser }},
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node,
+        module: "writable",
+        require: "writable",
+        process: "writable",
+      },
+    },
+    rules: {
+      "no-console": "off",
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "ForInStatement",
+          message: "for..in loops are not allowed",
+        },
+        {
+          selector: "LabeledStatement",
+          message: "Labels are not allowed",
+        },
+        {
+          selector: "WithStatement",
+          message: "with statements are not allowed",
+        },
+      ],
+    },
+  },
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+    },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
 ];
