@@ -1,3 +1,6 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+
 const express = require('express');
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -23,16 +26,19 @@ const ratingRoutes = require('../routes/rating.routes');
 const commentsRoutes = require('../routes/comments.routes');
 
 try {
-  mongoose.connect('mongodb://localhost:27017/epita');
+  const mongoUri = process.env.MONGODB_URI;
+  if (!mongoUri) {
+    throw new Error('MONGODB_URI is not defined');
+  }
+  mongoose.connect(mongoUri);
   logger.info('MongoDB Connected');
 } catch (error) {
-  logger.error('Error connecting to DB' + error);
+  logger.error('Error connecting to DB: ' + error);
 }
 
 // MIDDLEWARE
 const registerCoreMiddleWare = () => {
   try {
-    // using our session
     app.use(
       session({
         secret: '1234',
@@ -46,9 +52,9 @@ const registerCoreMiddleWare = () => {
     );
 
     app.use(morgan('combined', { stream: logger.stream }));
-    app.use(express.json()); // returning middleware that only parses Json
-    app.use(cors({})); // enabling CORS
-    app.use(helmet()); // enabling helmet -> setting response headers
+    app.use(express.json());
+    app.use(cors({}));
+    app.use(helmet());
 
     app.use(validator);
     app.use(healthCheck);
@@ -56,14 +62,12 @@ const registerCoreMiddleWare = () => {
     app.use('/auth', authRoutes);
     app.use('/users', usersRoutes);
 
-    // Route registration
     app.use('/messages', verifyToken, messageRoutes);
     app.use('/profile', verifyToken, profileRoutes);
     app.use('/movies', verifyToken, moviesRoutes);
     app.use('/ratings', verifyToken, ratingRoutes);
     app.use('/comments', verifyToken, commentsRoutes);
 
-    // 404 handling for not found
     app.use(notFound);
 
     logger.http('Done registering all middlewares');
@@ -75,29 +79,24 @@ const registerCoreMiddleWare = () => {
 
 // handling uncaught exceptions
 const handleError = () => {
-  // 'process' is a built it object in nodejs
-  // if uncaught exceptoin, then we execute this
-  //
   process.on('uncaughtException', (err) => {
     logger.error(`UNCAUGHT_EXCEPTION OCCURED : ${JSON.stringify(err.stack)}`);
   });
 };
 
-// start applicatoin
+// start application
 const startApp = () => {
   try {
-    // register core application level middleware
     registerCoreMiddleWare();
 
     app.listen(PORT, () => {
       logger.info('Listening on 127.0.0.1:' + PORT);
     });
 
-    // exit on uncaught exception
     handleError();
   } catch (err) {
     logger.error(
-      `startup :: Error while booting the applicaiton ${JSON.stringify(
+      `startup :: Error while booting the application ${JSON.stringify(
         err,
         undefined,
         2

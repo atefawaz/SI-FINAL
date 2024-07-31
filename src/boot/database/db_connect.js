@@ -1,14 +1,11 @@
 const pg = require('pg');
+const parse = require('pg-connection-string').parse;
 const logger = require('../../middleware/winston');
+require('dotenv').config();
 
-const db_config = {
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: 5454,
-  max: 10,
-};
+const db_config = parse(process.env.DATABASE_URL);
+
+db_config.max = 10; // Set the max pool size if needed
 
 let db_connection;
 
@@ -24,12 +21,12 @@ function startConnection() {
     if (!err) {
       logger.info('PostgreSQL Connected');
     } else {
-      logger.error('PostgreSQL Connection Failed');
+      logger.error('PostgreSQL Connection Failed', err);
     }
   });
 
-  db_connection.on('error', () => {
-    logger.error('Unexpected error on idle client');
+  db_connection.on('error', (err) => {
+    logger.error('Unexpected error on idle client', err);
     startConnection();
   });
 }
