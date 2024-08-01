@@ -48,19 +48,23 @@ jobs:
         ls -l /tmp/ec2-key.pem
         cat /tmp/ec2-key.pem
 
-    - name: Start SSH Agent and Add Key
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: /tmp/ec2-key.pem
+    - name: Start SSH Agent
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add /tmp/ec2-key.pem
+
+    - name: Ensure deployment directory exists
+      run: |
+        ssh -o StrictHostKeyChecking=no -i /tmp/ec2-key.pem ec2-user@${{ secrets.EC2_INSTANCE_IP }} 'mkdir -p /home/ec2-user/app'
 
     - name: Transfer files to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -i /tmp/ec2-key.pem -r * ec2-user@${{ secrets.EC2_INSTANCE_IP }}:/home/ec2-user/myapp
+        scp -o StrictHostKeyChecking=no -i /tmp/ec2-key.pem -r * ec2-user@${{ secrets.EC2_INSTANCE_IP }}:/home/ec2-user/app
 
     - name: Deploy application on EC2
       run: |
         ssh -o StrictHostKeyChecking=no -i /tmp/ec2-key.pem ec2-user@${{ secrets.EC2_INSTANCE_IP }} << 'EOF'
-          cd /home/ec2-user/myapp
+          cd /home/ec2-user/app
           npm install --legacy-peer-deps
           npm run build
           pm2 restart all || pm2 start npm --name "app" -- run start
