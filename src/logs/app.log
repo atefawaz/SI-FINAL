@@ -1,3 +1,54 @@
 {"level":"info","message":"MongoDB Connected","timestamp":"2024-07-29T10:51:08.373Z"}
 {"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-29T10:51:08.381Z"}
 {"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-29T10:51:08.415Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:09:00.349Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:09:00.357Z"}
+{"level":"error","message":"UNCAUGHT_EXCEPTION OCCURED : \"MongooseError: The `uri` parameter to `openUri()` must be a string, got \\\"undefined\\\". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\\n    at NativeConnection.createClient (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:219:11)\\n    at NativeConnection.openUri (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/connection.js:823:34)\\n    at Mongoose.connect (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/mongoose.js:448:15)\\n    at Object.<anonymous> (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/src/boot/setup.js:31:12)\\n    at Module._compile (node:internal/modules/cjs/loader:1434:14)\\n    at Module._extensions..js (node:internal/modules/cjs/loader:1518:10)\\n    at Module.load (node:internal/modules/cjs/loader:1249:32)\\n    at Module._load (node:internal/modules/cjs/loader:1065:12)\\n    at Module.require (node:internal/modules/cjs/loader:1271:19)\\n    at require (node:internal/modules/helpers:123:16)\"","timestamp":"2024-07-31T10:09:00.358Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:09:00.394Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:24:05.291Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:24:05.296Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:24:05.336Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:26:49.729Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:26:49.742Z"}
+{"level":"error","message":"UNCAUGHT_EXCEPTION OCCURED : \"MongooseError: The `uri` parameter to `openUri()` must be a string, got \\\"undefined\\\". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\\n    at NativeConnection.createClient (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:219:11)\\n    at NativeConnection.openUri (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/connection.js:823:34)\\n    at Mongoose.connect (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/mongoose.js:448:15)\\n    at Object.<anonymous> (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/src/boot/setup.js:29:12)\\n    at Module._compile (node:internal/modules/cjs/loader:1434:14)\\n    at Module._extensions..js (node:internal/modules/cjs/loader:1518:10)\\n    at Module.load (node:internal/modules/cjs/loader:1249:32)\\n    at Module._load (node:internal/modules/cjs/loader:1065:12)\\n    at Module.require (node:internal/modules/cjs/loader:1271:19)\\n    at require (node:internal/modules/helpers:123:16)\"","timestamp":"2024-07-31T10:26:49.743Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:26:49.781Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:27:47.446Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:27:47.456Z"}
+{"level":"error","message":"UNCAUGHT_EXCEPTION OCCURED : \"MongooseError: The `uri` parameter to `openUri()` must be a string, got \\\"undefined\\\". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.\\n    at NativeConnection.createClient (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:219:11)\\n    at NativeConnection.openUri (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/connection.js:823:34)\\n    at Mongoose.connect (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/mongoose.js:448:15)\\n    at Object.<anonymous> (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/src/boot/setup.js:29:12)\\n    at Module._compile (node:internal/modules/cjs/loader:1434:14)\\n    at Module._extensions..js (node:internal/modules/cjs/loader:1518:10)\\n    at Module.load (node:internal/modules/cjs/loader:1249:32)\\n    at Module._load (node:internal/modules/cjs/loader:1065:12)\\n    at Module.require (node:internal/modules/cjs/loader:1271:19)\\n    at require (node:internal/modules/helpers:123:16)\"","timestamp":"2024-07-31T10:27:47.457Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:27:47.495Z"}
+{"level":"error","message":"Error connecting to DB: Error: MONGODB_URI is not defined","timestamp":"2024-07-31T10:30:32.170Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:30:32.176Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:30:32.207Z"}
+{"level":"error","message":"Error connecting to DB: Error: MONGODB_URI is not defined","timestamp":"2024-07-31T10:32:06.286Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:32:06.296Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:32:06.362Z"}
+{"level":"error","message":"Error connecting to DB: Error: MONGODB_URI is not defined","timestamp":"2024-07-31T10:32:32.222Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:32:32.227Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:32:32.267Z"}
+{"level":"error","message":"Error connecting to DB: Error: MONGODB_URI is not defined","timestamp":"2024-07-31T10:32:57.071Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:32:57.075Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:32:57.109Z"}
+{"level":"error","message":"Error connecting to DB: Error: MONGODB_URI is not defined","timestamp":"2024-07-31T10:33:35.495Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:33:35.499Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:33:35.527Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:35:47.323Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:35:47.333Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:35:47.371Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:41:46.454Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:41:46.465Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:41:46.496Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:43:36.144Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:43:36.150Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:43:36.179Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:43:51.057Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:43:51.061Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:43:51.102Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T10:44:07.423Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T10:44:07.428Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T10:44:07.454Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T11:00:00.541Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T11:00:00.550Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T11:00:00.587Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T12:21:40.349Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T12:21:40.357Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T12:21:40.426Z"}

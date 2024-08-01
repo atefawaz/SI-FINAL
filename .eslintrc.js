@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     node: true,
     es2021: true,
+    jest: true, // Add Jest environment
   },
   extends: [
     'eslint:recommended',
@@ -14,7 +15,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'jest'], // Add Jest plugin
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'error',

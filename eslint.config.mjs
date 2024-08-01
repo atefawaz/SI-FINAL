@@ -11,6 +11,7 @@ export default [
         module: "writable",
         require: "writable",
         process: "writable",
+        ...globals.jest,  // Add Jest globals here
       },
     },
     rules: {
