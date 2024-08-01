@@ -9,4 +9,3 @@ const startApp = require('./boot/setup').startApp;
     console.log(`Error; ${JSON.stringify(error, undefined, 2)}`);
   }
 })();
-// Test CI/CD pipeline

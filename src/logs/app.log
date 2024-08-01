@@ -52,3 +52,13 @@
 {"level":"info","message":"MongoDB Connected","timestamp":"2024-07-31T12:21:40.349Z"}
 {"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-31T12:21:40.357Z"}
 {"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-31T12:21:40.426Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-08-01T22:45:18.062Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-08-01T22:45:18.071Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-08-01T22:45:18.108Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-08-01T22:58:22.580Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-08-01T22:58:22.590Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-08-01T22:58:22.634Z"}
+{"level":"error","message":"UNCAUGHT_EXCEPTION OCCURED : \"MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\\n    at _handleConnectionErrors (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/connection.js:897:11)\\n    at NativeConnection.openUri (/Users/ateffawaz/Downloads/FINAX/SI-FINAL/node_modules/mongoose/lib/connection.js:848:11)\"","timestamp":"2024-08-01T22:59:03.249Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-08-01T23:09:12.644Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-08-01T23:09:12.656Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-08-01T23:09:12.690Z"}
