@@ -31,3 +31,5 @@
 {"level":"info","message":"PostgreSQL Connected","timestamp":"2024-07-25T13:51:25.146Z"}
 {"level":"info","message":"MongoDB Connected","timestamp":"2024-07-25T13:51:25.522Z"}
 {"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-07-25T13:51:25.532Z"}
+{"level":"error","timestamp":"2024-08-02T16:38:57.622Z"}
+{"level":"error","timestamp":"2024-08-02T16:42:37.677Z"}
