@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
 
     steps:
     - name: Checkout code
@@ -32,7 +32,7 @@ jobs:
     - name: Install dependencies
       run: npm ci --legacy-peer-deps
 
-    # Comment out or remove the linting step
+    # Comment out or remove the linting step if not needed
     # - name: Run linter
     #   run: npm run lint
 

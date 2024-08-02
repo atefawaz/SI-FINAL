@@ -62,3 +62,6 @@
 {"level":"info","message":"MongoDB Connected","timestamp":"2024-08-01T23:09:12.644Z"}
 {"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-08-01T23:09:12.656Z"}
 {"level":"info","message":"PostgreSQL Connected","timestamp":"2024-08-01T23:09:12.690Z"}
+{"level":"info","message":"MongoDB Connected","timestamp":"2024-08-02T15:04:39.233Z"}
+{"level":"info","message":"Listening on 127.0.0.1:8080","timestamp":"2024-08-02T15:04:39.244Z"}
+{"level":"info","message":"PostgreSQL Connected","timestamp":"2024-08-02T15:04:39.283Z"}
