@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import logger from './winston';
+import { logger } from './winston';
 import { badRequest } from '../constants/statusCodes';
 
-const validator = (req: Request, res: Response, next: NextFunction): void => {
+const validator = (req: Request, res: Response, next: NextFunction) => {
   // No creation date is allowed to pass through
   if (req.body.creation_date) {
     delete req.body.creation_date;

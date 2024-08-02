@@ -1,11 +1,11 @@
-import { Request, Response, NextFunction } from 'express';
+import { Router, Request, Response } from 'express';
 
-const healthCheck = (
-  _req: Request,
-  res: Response,
-  _next: NextFunction
-): void => {
-  res.status(200).json({ status: 'ok' });
-};
+const router = Router();
 
-export default healthCheck;
+router.get('/api/health', (_req: Request, res: Response) => {
+  res.status(200).json({
+    message: 'All up and running !!',
+  });
+});
+
+export default router;
