@@ -1,41 +1,23 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt, { JwtPayload } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { unauthorized } from '../constants/statusCodes';
-import logger from './winston';
+import { logger } from './winston';
 
-// Extend the Request interface to include the user property
-declare module 'express-serve-static-core' {
-  interface Request {
-    user?: any; // Adjust the type according to your actual user type
-  }
-}
+const verifyToken = (req: Request, res: Response, next: NextFunction) => {
+  const token = req.header('Authorization');
 
-interface DecodedToken extends JwtPayload {
-  user: string; // Adjust the type according to your actual user type
-}
-
-const verifyToken = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Response | void => {
-  const authHeader = req.header('Authorization');
-
-  if (!authHeader) {
+  if (!token) {
     return res.status(unauthorized).json({ error: 'Unauthorized' });
   }
 
-  const token = authHeader.split(' ')[1];
-
   try {
     const decoded = jwt.verify(
-      token,
+      token.split(' ')[1],
       process.env.JWT_SECRET_KEY as string
-    ) as DecodedToken;
-
+    ) as { user: any };
     req.user = decoded.user;
 
-    console.log('TOKEN USER:', req.user);
+    console.log('TOKEN USER: ', req.user);
     next();
   } catch (error) {
     logger.error(error);

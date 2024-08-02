@@ -1,13 +1,12 @@
 import { createLogger, format, transports } from 'winston';
-import { Writable } from 'stream';
+import { StreamOptions } from 'morgan';
 
-// Define the custom settings for each transport
 const options = {
   file: {
     level: 'info',
-    filename: './logs/app.log',
+    filename: `./logs/app.log`,
     handleExceptions: true,
-    maxsize: 5242880, // about 5MB
+    maxsize: 5242880, // 5MB
     maxFiles: 5,
     format: format.combine(format.timestamp(), format.json()),
   },
@@ -18,7 +17,6 @@ const options = {
   },
 };
 
-// Instantiate a new Winston Logger with the options defined above
 const logger = createLogger({
   transports: [
     new transports.File(options.file),
@@ -27,15 +25,10 @@ const logger = createLogger({
   exitOnError: false,
 });
 
-// Create a stream object with a 'write' function
-const stream = new Writable({
-  write: (message: string, _encoding, callback) => {
+const stream: StreamOptions = {
+  write: (message: string) => {
     logger.info(message.trim());
-    callback();
   },
-});
+};
 
-// Extend the logger to include the stream property
-(logger as any).stream = stream;
-
-export default logger;
+export { logger, stream };
